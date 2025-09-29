@@ -38,6 +38,7 @@ The exported JSON follows this structure:
 import json
 import sys
 import os
+import sqlite3
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from database.navbar_db_connect import get_connection, close_connection
 from database.navbar_setup import init_db, insert_sample_data

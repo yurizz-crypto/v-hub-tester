@@ -1,0 +1,1032 @@
+{
+    "organizations": [
+        {
+            "id": 1,
+            "name": "College of Information Sciences & Computing Student Council (CiSCo)",
+            "is_joined": true,
+            "is_branch": false,
+            "logo_path": "C:/Users/Yuri/Desktop/r v-hub/CISCT-Virual-Hub-main/frontend/assets/organization/sample_orgs/CiSCo Logo.jpg",
+            "details": "View Details",
+            "brief": "Hellow",
+            "description": "Represent students and organize academic events.",
+            "branches": [
+                {
+                    "id": 101,
+                    "name": "IT Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Section for IT enthusiasts.",
+                    "description": "Focus on IT-related projects and events.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Alex Brown",
+                            "Member"
+                        ],
+                        [
+                            "Sofia Davis",
+                            "Member"
+                        ]
+                    ]
+                },
+                {
+                    "id": 102,
+                    "name": "CS Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Section for CS enthusiasts.",
+                    "description": "Focus on computer science projects and events.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Liam Wilson",
+                            "Member"
+                        ],
+                        [
+                            "Emma Moore",
+                            "Member"
+                        ]
+                    ]
+                }
+            ],
+            "events": [
+                {
+                    "name": "Coding Bootcamp",
+                    "date": "2025-09-25",
+                    "description": "Intensive coding sessions."
+                },
+                {
+                    "name": "Tech Talk Series",
+                    "date": "2025-10-30",
+                    "description": "Guest speakers on tech trends."
+                }
+            ],
+            "officers": [
+                {
+                    "name": "Ruben, Stephen Joseph",
+                    "position": "Vice - Internal Chairperson",
+                    "card_image_path": "frontend/assets/organization/sample_officers/Chairperson.jpg",
+                    "photo_path": "frontend/assets/organization/sample_officers/Chairperson.jpg",
+                    "start_date": "07/08/2025"
+                },
+                {
+                    "name": "Pescasio, Jacob Hermon",
+                    "position": "Vice - Internal Chairperson",
+                    "card_image_path": "frontend/assets/organization/sample_officers/Internal.jpg",
+                    "photo_path": "frontend/assets/organization/sample_officers/Internal.jpg",
+                    "start_date": "07/08/2025"
+                },
+                {
+                    "name": "Okit, Maki Auri",
+                    "position": "Vice - External Chairperson",
+                    "card_image_path": "frontend/assets/organization/sample_officers/External.jpg",
+                    "photo_path": "frontend/assets/organization/sample_officers/External.jpg",
+                    "start_date": "07/08/2025"
+                },
+                {
+                    "name": "Unajan, Vianca Louise",
+                    "position": "Secretary",
+                    "card_image_path": "frontend/assets/organization/sample_officers/Secretary.jpg",
+                    "photo_path": "frontend/assets/organization/sample_officers/Secretary.jpg",
+                    "start_date": "07/08/2025"
+                }
+            ],
+            "members": [
+                [
+                    "Yuri Salise",
+                    "Member",
+                    "Inactive",
+                    "2023-04-09"
+                ],
+                [
+                    "Kurty Salise",
+                    "Member",
+                    "Inactive",
+                    "2023-04-09"
+                ],
+                [
+                    "Mia King",
+                    "Member",
+                    "Active",
+                    "2023-05-12"
+                ],
+                [
+                    "Noah Scott",
+                    "Member",
+                    "Active",
+                    "2023-06-18"
+                ],
+                [
+                    "John Doe",
+                    "Treasurer",
+                    "Active",
+                    "2025-09-20"
+                ]
+            ],
+            "applicants": [
+                [
+                    "Jane Smith",
+                    "Member"
+                ]
+            ],
+            "officer_history": {}
+        },
+        {
+            "id": 2,
+            "name": "Robotics Club",
+            "is_joined": true,
+            "is_branch": false,
+            "logo_path": "frontend/assets/organization/sample_orgs/Sample Org 1.jpg",
+            "details": "More Details",
+            "brief": "Club dedicated to robotics engineering.",
+            "description": "Build and program robots.",
+            "branches": [
+                {
+                    "id": 201,
+                    "name": "Mechanics Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Focus on robot mechanics.",
+                    "description": "Build mechanical components of robots.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Oliver Green",
+                            "Member"
+                        ],
+                        [
+                            "Ava White",
+                            "Member"
+                        ]
+                    ]
+                },
+                {
+                    "id": 202,
+                    "name": "Programming Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Focus on robot programming.",
+                    "description": "Program robots for functionality.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Ethan Lee",
+                            "Member"
+                        ],
+                        [
+                            "Isabella Clark",
+                            "Member"
+                        ]
+                    ]
+                }
+            ],
+            "events": [
+                {
+                    "name": "Robot Competition",
+                    "date": "2025-11-20",
+                    "description": "Annual robotics challenge."
+                }
+            ],
+            "officers": [
+                {
+                    "name": "Ruben, Stephen Joseph",
+                    "position": "Vice - Internal Chairperson",
+                    "card_image_path": "frontend/assets/organization/sample_officers/Chairperson.jpg",
+                    "photo_path": "frontend/assets/organization/sample_officers/Chairperson.jpg",
+                    "start_date": "07/08/2025"
+                }
+            ],
+            "members": [
+                [
+                    "Sophia Martinez",
+                    "Member",
+                    "Active",
+                    "2025-09-27"
+                ]
+            ],
+            "applicants": [],
+            "officer_history": {}
+        },
+        {
+            "id": 3,
+            "name": "Chess Club",
+            "is_joined": false,
+            "is_branch": false,
+            "logo_path": "No Photo",
+            "details": "More Details",
+            "brief": "Club for chess players.",
+            "description": "Play and learn chess.",
+            "branches": [
+                {
+                    "id": 301,
+                    "name": "Beginner Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Section for beginner chess players.",
+                    "description": "Learn basic chess strategies.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Mason Adams",
+                            "Member"
+                        ],
+                        [
+                            "Charlotte Baker",
+                            "Member"
+                        ]
+                    ]
+                },
+                {
+                    "id": 302,
+                    "name": "Advanced Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Section for advanced chess players.",
+                    "description": "Compete in advanced chess tournaments.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Elijah Carter",
+                            "Member"
+                        ],
+                        [
+                            "Amelia Diaz",
+                            "Member"
+                        ]
+                    ]
+                }
+            ],
+            "events": [
+                {
+                    "name": "Chess Tournament",
+                    "date": "2025-10-10",
+                    "description": "Inter-club chess matches."
+                }
+            ],
+            "officers": [],
+            "members": [
+                [
+                    "Ira Turner",
+                    "President",
+                    "Active",
+                    "2024-03-01"
+                ],
+                [
+                    "Jade Underwood",
+                    "Member",
+                    "Active",
+                    "2024-04-05"
+                ],
+                [
+                    "Kyle Vargas",
+                    "Member",
+                    "Inactive",
+                    "2024-05-10"
+                ],
+                [
+                    "Lia White",
+                    "Member",
+                    "Active",
+                    "2024-06-15"
+                ]
+            ],
+            "applicants": [
+                [
+                    "James Edwards",
+                    "Member"
+                ],
+                [
+                    "Harper Flores",
+                    "Member"
+                ]
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Debate Team",
+            "is_joined": false,
+            "is_branch": false,
+            "logo_path": "No Photo",
+            "details": "More Details",
+            "brief": "Team for public speaking and debates.",
+            "description": "Join debates and competitions.",
+            "branches": [
+                {
+                    "id": 401,
+                    "name": "Policy Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Focus on policy debates.",
+                    "description": "Train in policy debate techniques.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Logan Garcia",
+                            "Member"
+                        ],
+                        [
+                            "Mia Hernandez",
+                            "Member"
+                        ]
+                    ]
+                }
+            ],
+            "events": [
+                {
+                    "name": "Debate Workshop",
+                    "date": "2025-09-15",
+                    "description": "Training on debate techniques."
+                }
+            ],
+            "officers": [],
+            "members": [
+                [
+                    "Max Young",
+                    "President",
+                    "Active",
+                    "2022-01-01"
+                ],
+                [
+                    "Nora Zimmerman",
+                    "Member",
+                    "Active",
+                    "2022-02-05"
+                ],
+                [
+                    "Owen Allen",
+                    "Member",
+                    "Inactive",
+                    "2022-03-10"
+                ],
+                [
+                    "Paula Bell",
+                    "Member",
+                    "Active",
+                    "2022-04-15"
+                ]
+            ],
+            "applicants": [
+                [
+                    "William Jackson",
+                    "Member"
+                ],
+                [
+                    "Evelyn Kim",
+                    "Member"
+                ]
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Eco Warriors",
+            "is_joined": false,
+            "is_branch": false,
+            "logo_path": "No Photo",
+            "details": "More Details",
+            "brief": "Group focused on sustainability.",
+            "description": "Environmental activities.",
+            "branches": [
+                {
+                    "id": 501,
+                    "name": "Recycling Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Focus on recycling initiatives.",
+                    "description": "Promote recycling practices.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Daniel Lee",
+                            "Member"
+                        ],
+                        [
+                            "Chloe Martinez",
+                            "Member"
+                        ]
+                    ]
+                },
+                {
+                    "id": 502,
+                    "name": "Conservation Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Focus on conservation efforts.",
+                    "description": "Promote conservation practices.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Benjamin Nguyen",
+                            "Member"
+                        ],
+                        [
+                            "Lily Patel",
+                            "Member"
+                        ]
+                    ]
+                }
+            ],
+            "events": [
+                {
+                    "name": "Tree Planting",
+                    "date": "2025-10-25",
+                    "description": "Community tree planting event."
+                }
+            ],
+            "officers": [],
+            "members": [
+                [
+                    "Quinn Cook",
+                    "President",
+                    "Active",
+                    "2023-09-01"
+                ],
+                [
+                    "Riley Diaz",
+                    "Member",
+                    "Active",
+                    "2023-10-05"
+                ],
+                [
+                    "Sam Evans",
+                    "Member",
+                    "Inactive",
+                    "2023-11-10"
+                ],
+                [
+                    "Tina Foster",
+                    "Member",
+                    "Active",
+                    "2023-12-15"
+                ]
+            ],
+            "applicants": [
+                [
+                    "Michael Quinn",
+                    "Member"
+                ],
+                [
+                    "Aria Roberts",
+                    "Member"
+                ]
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Coding Club",
+            "is_joined": false,
+            "is_branch": false,
+            "logo_path": "No Photo",
+            "details": "More Details",
+            "brief": "Club for coders.",
+            "description": "Learn programming.",
+            "branches": [
+                {
+                    "id": 601,
+                    "name": "Web Dev Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Focus on web development.",
+                    "description": "Learn web programming languages.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Henry Smith",
+                            "Member"
+                        ],
+                        [
+                            "Grace Taylor",
+                            "Member"
+                        ]
+                    ]
+                },
+                {
+                    "id": 602,
+                    "name": "App Dev Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Focus on app development.",
+                    "description": "Learn mobile app programming.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Jack Wilson",
+                            "Member"
+                        ],
+                        [
+                            "Sophie Young",
+                            "Member"
+                        ]
+                    ]
+                }
+            ],
+            "events": [
+                {
+                    "name": "Code Jam",
+                    "date": "2025-11-05",
+                    "description": "Coding competition."
+                }
+            ],
+            "officers": [],
+            "members": [
+                [
+                    "Uma Gray",
+                    "President",
+                    "Active",
+                    "2024-09-01"
+                ],
+                [
+                    "Victor Harris",
+                    "Member",
+                    "Active",
+                    "2024-10-05"
+                ],
+                [
+                    "Wendy Irving",
+                    "Member",
+                    "Inactive",
+                    "2024-11-10"
+                ],
+                [
+                    "Xander Jenkins",
+                    "Member",
+                    "Active",
+                    "2024-12-15"
+                ]
+            ],
+            "applicants": [
+                [
+                    "Thomas Brown",
+                    "Member"
+                ],
+                [
+                    "Zoe Clark",
+                    "Member"
+                ]
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Business Society",
+            "is_joined": false,
+            "is_branch": false,
+            "logo_path": "No Photo",
+            "details": "More Details",
+            "brief": "Society for business minds.",
+            "description": "Entrepreneurship events.",
+            "branches": [
+                {
+                    "id": 701,
+                    "name": "Marketing Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Focus on marketing strategies.",
+                    "description": "Learn marketing techniques.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Lucas Davis",
+                            "Member"
+                        ],
+                        [
+                            "Ella Garcia",
+                            "Member"
+                        ]
+                    ]
+                }
+            ],
+            "events": [
+                {
+                    "name": "Startup Pitch",
+                    "date": "2025-12-15",
+                    "description": "Pitch business ideas."
+                }
+            ],
+            "officers": [],
+            "members": [
+                [
+                    "Yara Kelly",
+                    "President",
+                    "Active",
+                    "2022-11-01"
+                ],
+                [
+                    "Zach Lopez",
+                    "Member",
+                    "Active",
+                    "2022-12-05"
+                ],
+                [
+                    "Anna Morris",
+                    "Member",
+                    "Inactive",
+                    "2023-01-10"
+                ],
+                [
+                    "Ben Nelson",
+                    "Member",
+                    "Active",
+                    "2023-02-15"
+                ]
+            ],
+            "applicants": [
+                [
+                    "David Hernandez",
+                    "Member"
+                ],
+                [
+                    "Olivia Lee",
+                    "Member"
+                ]
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Film Makers",
+            "is_joined": false,
+            "is_branch": false,
+            "logo_path": "No Photo",
+            "details": "More Details",
+            "brief": "Group for filmmakers.",
+            "description": "Create short films.",
+            "branches": [
+                {
+                    "id": 801,
+                    "name": "Directing Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Focus on film directing.",
+                    "description": "Learn directing techniques.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Noah Martinez",
+                            "Member"
+                        ],
+                        [
+                            "Ava Nguyen",
+                            "Member"
+                        ]
+                    ]
+                },
+                {
+                    "id": 802,
+                    "name": "Editing Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Focus on film editing.",
+                    "description": "Learn film editing techniques.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Liam Patel",
+                            "Member"
+                        ],
+                        [
+                            "Emma Quinn",
+                            "Member"
+                        ]
+                    ]
+                }
+            ],
+            "events": [
+                {
+                    "name": "Film Festival",
+                    "date": "2025-10-05",
+                    "description": "Screening of short films."
+                }
+            ],
+            "officers": [],
+            "members": [
+                [
+                    "Cara Owens",
+                    "President",
+                    "Active",
+                    "2023-07-01"
+                ],
+                [
+                    "Dan Perez",
+                    "Member",
+                    "Active",
+                    "2023-08-05"
+                ],
+                [
+                    "Ella Quinn",
+                    "Member",
+                    "Inactive",
+                    "2023-09-10"
+                ],
+                [
+                    "Finn Roberts",
+                    "Member",
+                    "Active",
+                    "2023-10-15"
+                ]
+            ],
+            "applicants": [
+                [
+                    "Mason Roberts",
+                    "Member"
+                ],
+                [
+                    "Isabella Smith",
+                    "Member"
+                ]
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Math Club",
+            "is_joined": false,
+            "is_branch": false,
+            "logo_path": "No Photo",
+            "details": "More Details",
+            "brief": "Club for math enthusiasts.",
+            "description": "Math competitions.",
+            "branches": [
+                {
+                    "id": 901,
+                    "name": "Algebra Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Focus on algebra problems.",
+                    "description": "Solve algebra-based challenges.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Ethan Taylor",
+                            "Member"
+                        ],
+                        [
+                            "Sophia Wilson",
+                            "Member"
+                        ]
+                    ]
+                },
+                {
+                    "id": 902,
+                    "name": "Geometry Branch",
+                    "is_joined": false,
+                    "is_branch": true,
+                    "logo_path": "No Photo",
+                    "details": "More Details",
+                    "brief": "Focus on geometry problems.",
+                    "description": "Solve geometry-based challenges.",
+                    "events": [],
+                    "officers": [],
+                    "members": [],
+                    "applicants": [
+                        [
+                            "Oliver Young",
+                            "Member"
+                        ],
+                        [
+                            "Charlotte Adams",
+                            "Member"
+                        ]
+                    ]
+                }
+            ],
+            "events": [
+                {
+                    "name": "Math Olympiad",
+                    "date": "2025-11-25",
+                    "description": "Math competition prep."
+                }
+            ],
+            "officers": [],
+            "members": [
+                [
+                    "Gina Stewart",
+                    "President",
+                    "Active",
+                    "2024-07-01"
+                ],
+                [
+                    "Hank Turner",
+                    "Member",
+                    "Active",
+                    "2024-08-05"
+                ],
+                [
+                    "Ira Underwood",
+                    "Member",
+                    "Inactive",
+                    "2024-09-10"
+                ],
+                [
+                    "Jade Vargas",
+                    "Member",
+                    "Active",
+                    "2024-10-15"
+                ]
+            ],
+            "applicants": [
+                [
+                    "James Baker",
+                    "Member"
+                ],
+                [
+                    "Amelia Carter",
+                    "Member"
+                ]
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Robotics Section",
+            "is_joined": true,
+            "is_branch": false,
+            "logo_path": "frontend/assets/organization/sample_orgs/Sample Org 2.png",
+            "details": "More Details",
+            "brief": "Section for robotics enthusiasts.",
+            "description": "Robotics branch.",
+            "branches": [],
+            "events": [
+                {
+                    "name": "Robotics Demo",
+                    "date": "2025-11-01",
+                    "description": "Demo of built robots."
+                }
+            ],
+            "officers": [],
+            "officer_history": {
+                "A.Y. 2024-2025 - 1st Semester": [
+                    {
+                        "name": "Sam Foster",
+                        "position": "Lead",
+                        "card_image_path": "frontend/assets/organization/sample_officers/Lead.jpg",
+                        "photo_path": "frontend/assets/organization/sample_officers/Lead.jpg",
+                        "start_date": "07/08/2024"
+                    },
+                    {
+                        "name": "Tina Gray",
+                        "position": "Assistant Lead",
+                        "card_image_path": "frontend/assets/organization/sample_officers/AssistantLead.jpg",
+                        "photo_path": "frontend/assets/organization/sample_officers/AssistantLead.jpg",
+                        "start_date": "07/08/2024"
+                    }
+                ],
+                "A.Y. 2024-2025 - 2nd Semester": [
+                    {
+                        "name": "Uma Harris",
+                        "position": "Lead",
+                        "card_image_path": "frontend/assets/organization/sample_officers/Lead2.jpg",
+                        "photo_path": "frontend/assets/organization/sample_officers/Lead2.jpg",
+                        "start_date": "01/15/2025"
+                    }
+                ]
+            },
+            "members": [
+                [
+                    "Sam Foster",
+                    "Lead",
+                    "Active",
+                    "2022-07-01"
+                ],
+                [
+                    "Tina Gray",
+                    "Member",
+                    "Active",
+                    "2022-08-05"
+                ],
+                [
+                    "Uma Harris",
+                    "Member",
+                    "Inactive",
+                    "2022-09-10"
+                ],
+                [
+                    "Victor Irving",
+                    "Member",
+                    "Active",
+                    "2022-10-15"
+                ]
+            ],
+            "applicants": [
+                [
+                    "Elijah Diaz",
+                    "Member"
+                ],
+                [
+                    "Harper Flores",
+                    "Member"
+                ]
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Chess Section",
+            "is_joined": false,
+            "is_branch": true,
+            "logo_path": "No Photo",
+            "details": "More Details",
+            "brief": "Section for chess strategies.",
+            "description": "Chess branch.",
+            "branches": [],
+            "events": [
+                {
+                    "name": "Chess Practice",
+                    "date": "2025-09-25",
+                    "description": "Weekly practice sessions."
+                }
+            ],
+            "officers": [],
+            "members": [
+                [
+                    "Wendy Jenkins",
+                    "Lead",
+                    "Active",
+                    "2023-11-01"
+                ],
+                [
+                    "Xander Kelly",
+                    "Member",
+                    "Active",
+                    "2023-12-05"
+                ],
+                [
+                    "Yara Lopez",
+                    "Member",
+                    "Inactive",
+                    "2024-01-10"
+                ],
+                [
+                    "Zach Morris",
+                    "Member",
+                    "Active",
+                    "2024-02-15"
+                ]
+            ],
+            "applicants": [
+                [
+                    "Logan Garcia",
+                    "Member"
+                ],
+                [
+                    "Mia Hernandez",
+                    "Member"
+                ]
+            ]
+        }
+    ]
+}
