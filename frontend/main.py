@@ -1,4 +1,10 @@
 import sys
+import os
+# Set project root by moving up one level from frontend/
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))  # C:\Users\Yuri\Desktop\v-hub-tester
+sys.path.insert(0, project_root)  # Insert at start to override other paths
+print(f"Main: Updated sys.path to {sys.path}")  # Debug print
+
 from PyQt6.QtWidgets import QApplication, QMainWindow, QGridLayout, QWidget
 from views.Login.login import LoginWidget
 from services.auth_service import AuthService

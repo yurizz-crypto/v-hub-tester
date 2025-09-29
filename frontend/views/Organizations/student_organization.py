@@ -7,7 +7,7 @@ project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
 sys.path.append(project_root)
 
 from typing import Dict
-from user import User
+from frontend.views.Organizations.user import User
 from frontend.widgets.orgs_custom_widgets.cards import JoinedOrgCard, CollegeOrgCard
 from frontend.widgets.orgs_custom_widgets.dialogs import OfficerDialog
 from frontend.widgets.orgs_custom_widgets.tables import ViewMembers
