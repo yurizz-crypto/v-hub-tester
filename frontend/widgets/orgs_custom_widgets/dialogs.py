@@ -142,6 +142,7 @@ class EditOfficerDialog(QtWidgets.QDialog):
     def __init__(self, officer_data, parent=None):
         super().__init__(parent)
         self.officer_data = officer_data.copy()
+        self.original_position = officer_data.get("position", "")
         self.setWindowTitle("Edit Officer Details")
         self.setFixedSize(500, 400)
         self.setStyleSheet("""
@@ -169,7 +170,10 @@ class EditOfficerDialog(QtWidgets.QDialog):
 
         # Position
         main_layout.addWidget(QtWidgets.QLabel("Position:"))
-        self.position_edit = QtWidgets.QLineEdit(self.officer_data.get("position", ""))
+        self.position_edit = QtWidgets.QComboBox()
+        possible_positions = ["President", "Vice - Internal Chairperson", "Vice - External Chairperson", "Secretary", "Treasurer", "Member"]
+        self.position_edit.addItems(possible_positions)
+        self.position_edit.setCurrentText(self.officer_data.get("position", ""))
         main_layout.addWidget(self.position_edit)
 
         # Start Date
@@ -197,7 +201,24 @@ class EditOfficerDialog(QtWidgets.QDialog):
             self.parent().parent().set_circular_logo(self.preview_label, file_path, size=150, border_width=4)
 
     def confirm(self):
-        self.officer_data["position"] = self.position_edit.text()
+        new_position = self.position_edit.currentText()
+        
+        if new_position != self.original_position and new_position != "Member":
+            main_window = self.parent().parent()
+            if hasattr(main_window, 'current_org') and main_window.current_org:
+                current_officers = main_window.current_org.get("officers", [])
+                
+                for officer in current_officers:
+                    if officer.get("name") != self.officer_data.get("name") and officer.get("position") == new_position:
+                        QtWidgets.QMessageBox.warning(
+                            self,
+                            "Position Already Taken",
+                            f"The position '{new_position}' is already occupied by {officer.get('name')}.\nPlease choose a different position.",
+                            QtWidgets.QMessageBox.StandardButton.Ok
+                        )
+                        return
+        
+        self.officer_data["position"] = new_position
         self.officer_data["start_date"] = self.date_edit.text()
         self.updated_data = self.officer_data
         self.accept()
@@ -220,7 +241,7 @@ class EditMemberDialog(QtWidgets.QDialog):
         main_layout = QtWidgets.QVBoxLayout(self)
         main_layout.addWidget(QtWidgets.QLabel("Position:"))
         self.position_edit = QtWidgets.QComboBox()
-        possible_positions = ["President", "Vice - Internal Chairperson", "Vice - External Chairperson", "Secretary", "Treasurer", "Member"]  # Add your possible positions here
+        possible_positions = ["President", "Vice - Internal Chairperson", "Vice - External Chairperson", "Secretary", "Treasurer", "Member"]
         self.position_edit.addItems(possible_positions)
         self.position_edit.setCurrentText(member_data[1])
         main_layout.addWidget(self.position_edit)
