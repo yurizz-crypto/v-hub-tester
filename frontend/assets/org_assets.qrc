@@ -4,6 +4,7 @@
     <file>organization/icons/burger_ic.png</file>
     <file>organization/icons/calendar.png</file>
     <file>organization/icons/search_ic.png</file>
+    <file>organization/icons/menu.png</file>
   </qresource>
   <qresource prefix="sample_orgs">
     <file>organization/sample_orgs/CiSCo Logo.jpg</file>

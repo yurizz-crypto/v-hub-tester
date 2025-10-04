@@ -6,8 +6,9 @@ sys.path.insert(0, project_root)
 from views.Organizations.student_organization import Student
 from views.Organizations.faculty_organization import Faculty
 from views.Organizations.officer_organization import Officer
+from views.Organizations.admin_organization import Admin
 
-print(f"Browse: Imported Student={Student is not None}, Faculty={Faculty is not None}, Officer={Officer is not None}")
+print(f"Browse: Imported Student={Student is not None}, Faculty={Faculty is not None}, Officer={Officer is not None}, Admin={Admin is not None}")
 
 class Browse(QWidget):
     def __init__(self, username="", roles=None, primary_role="", token=""):
@@ -16,7 +17,10 @@ class Browse(QWidget):
         self.layout = QVBoxLayout(self)
         self.layout.setContentsMargins(0, 0, 0, 0)
 
-        if primary_role == "faculty":
+        if primary_role == "admin":
+            print("Browse: Loading Admin view")
+            self.view = Admin(admin_name=username)
+        elif primary_role == "faculty":
             print("Browse: Loading Faculty view")
             self.view = Faculty(faculty_name=username)
         elif primary_role == "student":
