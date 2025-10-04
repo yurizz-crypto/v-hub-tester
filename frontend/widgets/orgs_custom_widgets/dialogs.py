@@ -4,28 +4,10 @@ from PyQt6.QtWidgets import QFileDialog
 class OfficerDialog(QtWidgets.QDialog):
     def __init__(self, officer_data, parent=None):
         super().__init__(parent)
-        self.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
-        self.setStyleSheet("""
-            QDialog {
-                background-color: white;
-                border: 1px solid #ccc;
-                border-radius: 10px;
-                padding: 10px;
-            }
-        """)
         self.setFixedSize(400, 300)
+        self.setWindowTitle("Officer Details")
 
         main_layout = QtWidgets.QVBoxLayout(self)
-
-        top_layout = QtWidgets.QHBoxLayout()
-        spacer = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        top_layout.addItem(spacer)
-        close_btn = QtWidgets.QPushButton("X")
-        close_btn.setFixedSize(20, 20)
-        close_btn.setStyleSheet("background-color: transparent; border: none; color: gray;")
-        close_btn.clicked.connect(self.close)
-        top_layout.addWidget(close_btn)
-        main_layout.addLayout(top_layout)
 
         hlayout = QtWidgets.QHBoxLayout()
         self.photo_label = QtWidgets.QLabel()
