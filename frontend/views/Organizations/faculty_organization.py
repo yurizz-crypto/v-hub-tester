@@ -9,14 +9,14 @@ sys.path.append(project_root)
 
 from typing import Dict, Optional
 from frontend.views.Organizations.user import User
-from frontend.widgets.orgs_custom_widgets.dialogs import OfficerDialog, EditMemberDialog, EditOrgDialog
+from frontend.widgets.orgs_custom_widgets.dialogs import EditMemberDialog, EditOrgDialog, OfficerDialog
 from frontend.widgets.orgs_custom_widgets.tables import ViewMembers, ViewApplicants
-from frontend.ui.Organization.org_main_ui import Ui_MainWindow
+from frontend.ui.Organization.org_main_ui import Ui_Widget
 
 class Faculty(User):
     def __init__(self, faculty_name: str = "Faculty Name"):
         super().__init__(name=faculty_name)
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_Widget()
         self.ui.setupUi(self)
         self.ui.joined_container.setVisible(False)
         self.edit_btn: Optional[QtWidgets.QPushButton] = None
@@ -28,6 +28,10 @@ class Faculty(User):
         self.ui.verticalLayout_17.addWidget(self.no_member_label)
         self._setup_connections()
         self.load_orgs()
+
+    def show_officer_dialog(self, officer_data: Dict) -> None:
+        """Display officer details in a dialog."""
+        OfficerDialog(officer_data, self).exec()
 
     def _setup_connections(self) -> None:
         """Set up signal-slot connections."""
@@ -75,6 +79,28 @@ class Faculty(User):
             self._add_no_record_label(self.ui.college_org_grid)
 
         self._update_scroll_areas()
+        self.hide_apply_buttons()
+
+    def update_officer_in_org(self, updated_officer: Dict) -> None:
+        """Update the officer data in the current organization and save."""
+        if not self.current_org:
+            return
+        if "officers" in self.current_org:
+            for i, off in enumerate(self.current_org["officers"]):
+                if off["name"] == updated_officer["name"]:
+                    self.current_org["officers"][i] = updated_officer
+                    break
+        if "officer_history" in self.current_org:
+            for semester, offs in self.current_org["officer_history"].items():
+                for i, off in enumerate(offs):
+                    if off["name"] == updated_officer["name"]:
+                        self.current_org["officer_history"][semester][i] = updated_officer
+                        break
+        self.save_data()
+        current_index = self.ui.officer_history_dp.currentIndex()
+        selected_semester = self.ui.officer_history_dp.itemText(current_index)
+        officers = self.current_org.get("officer_history", {}).get(selected_semester, []) if selected_semester != "Current Officers" else self.current_org.get("officers", [])
+        self.load_officers(officers)
 
     def load_branches(self, search_text: str = "") -> None:
         """Load and display branches, filtered by search text."""
@@ -95,10 +121,10 @@ class Faculty(User):
             self._add_no_record_label(self.ui.college_org_grid)
 
         self._update_scroll_areas()
+        self.hide_apply_buttons()
 
     def hide_apply_buttons(self) -> None:
-        """Hide all apply buttons in the UI."""
-        for child in self.ui.college_org_scrollable.findChildren(QtWidgets.QPushButton):
+        for child in self.ui.other_container.findChildren(QtWidgets.QPushButton):
             if child.text() == "Apply":
                 child.setVisible(False)
 
@@ -132,6 +158,10 @@ class Faculty(User):
         self.ui.college_org_grid.addWidget(card, row, col, alignment=QtCore.Qt.AlignmentFlag.AlignTop | QtCore.Qt.AlignmentFlag.AlignHCenter)
         self.college_org_count += 1
         self.ui.college_org_grid.setRowMinimumHeight(row, 300)
+
+    def show_officer_dialog(self, officer_data: Dict) -> None:
+        """Display officer details in a dialog."""
+        OfficerDialog(officer_data, self).exec()
 
     def load_members(self, search_text: str = "") -> None:
         """Load and filter members into the table view."""
@@ -413,9 +443,3 @@ class Faculty(User):
         else:
             self.load_orgs() if self.ui.comboBox.currentIndex() == 0 else self.load_branches()
             self.ui.stacked_widget.setCurrentIndex(0)
-
-if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    window = Faculty()
-    window.show()
-    sys.exit(app.exec())

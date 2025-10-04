@@ -1,12 +1,11 @@
 from PyQt6.QtWidgets import QWidget, QVBoxLayout
 import os, sys
-project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))  # C:\Users\Yuri\Desktop\v-hub-tester
-sys.path.insert(0, project_root)  # Insert at start to override other paths
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0, project_root)
 
 from views.Organizations.student_organization import Student
 from views.Organizations.faculty_organization import Faculty
 from views.Organizations.officer_organization import Officer
-from frontend.views.Organizations.user import User
 
 print(f"Browse: Imported Student={Student is not None}, Faculty={Faculty is not None}, Officer={Officer is not None}")
 

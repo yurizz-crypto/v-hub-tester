@@ -13,11 +13,10 @@ class OfficerDialog(QtWidgets.QDialog):
                 padding: 10px;
             }
         """)
-        self.setFixedSize(400, 300)  # Adjust size as needed
+        self.setFixedSize(400, 300)
 
         main_layout = QtWidgets.QVBoxLayout(self)
 
-        # Top layout for close button
         top_layout = QtWidgets.QHBoxLayout()
         spacer = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         top_layout.addItem(spacer)
@@ -28,7 +27,6 @@ class OfficerDialog(QtWidgets.QDialog):
         top_layout.addWidget(close_btn)
         main_layout.addLayout(top_layout)
 
-        # Horizontal layout for photo and info
         hlayout = QtWidgets.QHBoxLayout()
         self.photo_label = QtWidgets.QLabel()
         parent.set_circular_logo(self.photo_label, officer_data.get("photo_path", "No Photo"), size=150, border_width=4)
@@ -52,12 +50,12 @@ class OfficerDialog(QtWidgets.QDialog):
         contact_btn.setStyleSheet("background-color: white; border: 1px solid #ccc; border-radius: 5px;")
         main_layout.addWidget(cv_btn)
         main_layout.addWidget(contact_btn)
-
-        if parent.officer_name == officer_data.get("name"):
-            edit_btn = QtWidgets.QPushButton("Edit")
-            edit_btn.setStyleSheet("background-color: #FFD700; color: black; border: 1px solid #ccc; border-radius: 5px;")
-            edit_btn.clicked.connect(lambda: self.open_edit_officer(officer_data))
-            main_layout.addWidget(edit_btn)
+        
+        if (hasattr(parent, 'is_managing') and parent.is_managing) or parent.name == officer_data.get("name"):
+                    edit_btn = QtWidgets.QPushButton("Edit")
+                    edit_btn.setStyleSheet("background-color: #FFD700; color: black; border: 1px solid #ccc; border-radius: 5px;")
+                    edit_btn.clicked.connect(lambda: self.open_edit_officer(officer_data))
+                    main_layout.addWidget(edit_btn)
 
     def open_edit_officer(self, officer_data):
         dialog = EditOfficerDialog(officer_data, self)

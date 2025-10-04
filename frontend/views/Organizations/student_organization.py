@@ -11,12 +11,12 @@ from frontend.views.Organizations.user import User
 from frontend.widgets.orgs_custom_widgets.cards import JoinedOrgCard, CollegeOrgCard
 from frontend.widgets.orgs_custom_widgets.dialogs import OfficerDialog
 from frontend.widgets.orgs_custom_widgets.tables import ViewMembers
-from frontend.ui.Organization.org_main_ui import Ui_MainWindow
+from frontend.ui.Organization.org_main_ui import Ui_Widget
 
 class Student(User):
     def __init__(self, student_name: str = "Student"):
         super().__init__(name=student_name)
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_Widget()
         self.ui.setupUi(self)
         self.joined_org_count: int = 0
         self.table = self.findChild(QtWidgets.QTableView, "list_view")
@@ -189,9 +189,3 @@ class Student(User):
         else:
             self.load_orgs() if self.ui.comboBox.currentIndex() == 0 else self.load_branches()
             self.ui.stacked_widget.setCurrentIndex(0)
-
-if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    window = Student()
-    window.show()
-    sys.exit(app.exec())

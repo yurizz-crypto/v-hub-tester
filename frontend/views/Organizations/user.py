@@ -1,47 +1,68 @@
 import os
 import json
 import sys
+import copy
 from typing import List, Dict, Optional
 from PyQt6 import QtWidgets, QtCore, QtGui
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-class User(QtWidgets.QMainWindow):
-    def __init__(self, name: str = "User"):
-        super().__init__()
+class User(QtWidgets.QWidget):
+    def __init__(self, name: str = "User", parent: Optional[QtWidgets.QWidget] = None):
+        super().__init__(parent)
         self.name = name
         self.current_org: Optional[Dict] = None
-        self.ui = None  # To be set by subclasses
+        self.ui = None
         self.no_member_label = None
         self.table = None
         self.officer_count = 0
         self.college_org_count = 0
+        self.data_file = os.path.join(os.path.dirname(__file__), 'organizations_data.json')
 
-    @staticmethod
-    def _load_data() -> List[Dict]:
+    def _load_data(self) -> List[Dict]:
         """Load organization and branch data from JSON file."""
-        json_path = os.path.join(os.path.dirname(__file__), 'organizations_data.json')
         try:
-            with open(json_path, 'r') as file:
+            with open(self.data_file, 'r') as file:
                 data = json.load(file)
                 return data.get('organizations', [])
         except (FileNotFoundError, json.JSONDecodeError) as e:
-            print(f"Error loading {json_path}: {str(e)}")
+            print(f"Error loading {self.data_file}: {str(e)}")
             return []
 
     def save_data(self) -> None:
-        """Save updated organization data back to JSON file."""
+        """Save updated organization data back to JSON file, handling both top-level and nested branches."""
+        if not self.current_org:
+            print("No current organization to save.")
+            return
+
         organizations = self._load_data()
-        if self.current_org:
+        updated = False
+
+        for i in range(len(organizations)):
+            if organizations[i]["id"] == self.current_org["id"]:
+                organizations[i] = copy.deepcopy(self.current_org)
+                updated = True
+                break
+
+        if not updated:
             for org in organizations:
-                if org["id"] == self.current_org["id"]:
-                    org.update(self.current_org)
+                branches = org.get("branches", [])
+                for j in range(len(branches)):
+                    if branches[j]["id"] == self.current_org["id"]:
+                        branches[j] = copy.deepcopy(self.current_org)
+                        updated = True
+                        break
+                if updated:
                     break
-            json_path = os.path.join(os.path.dirname(__file__), 'organizations_data.json')
-            try:
-                with open(json_path, 'w') as file:
-                    json.dump({"organizations": organizations}, file, indent=4)
-            except Exception as e:
-                print(f"Error saving {json_path}: {str(e)}")
+
+        if not updated:
+            print(f"Warning: Could not find organization/branch with ID {self.current_org['id']} to update.")
+
+        try:
+            with open(self.data_file, 'w') as file:
+                json.dump({"organizations": organizations}, file, indent=4)
+            print(f"Successfully saved data to {self.data_file}")
+        except Exception as e:
+            print(f"Error saving {self.data_file}: {str(e)}")
 
     @staticmethod
     def _get_logo_path(rel_path: str) -> str:

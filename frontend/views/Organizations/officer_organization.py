@@ -37,6 +37,10 @@ class Officer(Student):
         else:
             self.load_members(search_text)
 
+    def show_officer_dialog(self, officer_data: Dict) -> None:
+        """Display officer details in a dialog."""
+        OfficerDialog(officer_data, self).exec()
+
     def load_members(self, search_text: str = "") -> None:
         """Load and filter members into the table view."""
         if not self.current_org:
@@ -352,9 +356,3 @@ class Officer(Student):
             del self.current_org["members"][original_index]
             self.save_data()
             self.load_members(search_text)
-
-if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    window = Officer()
-    window.show()
-    sys.exit(app.exec())
