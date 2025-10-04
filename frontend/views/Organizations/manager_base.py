@@ -138,10 +138,31 @@ class ManagerBase:
             return
         
         members_data = self.current_org.get("members", [])
+        officers_data = self.current_org.get("officers", [])
+        
+        # Add officers to members list if not already present
+        officer_names = {officer["name"] for officer in officers_data}
+        existing_member_names = {member[0] for member in members_data}
+        
+        # Create a combined list with officers included
+        combined_members = list(members_data)
+        for officer in officers_data:
+            if officer["name"] not in existing_member_names:
+                # Add officer as member with their position
+                combined_members.append([
+                    officer["name"],
+                    officer["position"],
+                    "Active",
+                    officer.get("start_date", QtCore.QDate.currentDate().toString("yyyy-MM-dd"))
+                ])
+        
+        # Update members in current_org to include officers
+        self.current_org["members"] = combined_members
+        
         filtered_members = [
-            member for member in members_data
+            member for member in combined_members
             if any(search_text in str(field).lower() for field in member)
-        ] if search_text else members_data
+        ] if search_text else combined_members
         
         # Reset table
         self.ui.list_view.setModel(None)
@@ -302,9 +323,53 @@ class ManagerBase:
         dialog = EditMemberDialog(member, self)
         if dialog.exec() == QtWidgets.QDialog.DialogCode.Accepted:
             new_position = dialog.updated_position
+            old_position = member[1]
+            member_name = member[0]
+            
+            # Update member position
             self.current_org["members"][original_index][1] = new_position
+            
+            officer_positions = ["President", "Vice - Internal Chairperson", "Vice - External Chairperson", "Secretary", "Treasurer"]
+            
+            if new_position in officer_positions:
+                # Check if member is already in officers list
+                officers = self.current_org.get("officers", [])
+                is_already_officer = any(officer["name"] == member_name for officer in officers)
+                
+                if not is_already_officer:
+                    # Promote member to officer
+                    new_officer = {
+                        "name": member_name,
+                        "position": new_position,
+                        "card_image_path": "No Photo",
+                        "photo_path": "No Photo",
+                        "start_date": QtCore.QDate.currentDate().toString("MM/dd/yyyy")
+                    }
+                    self.current_org["officers"].append(new_officer)
+                else:
+                    # Update existing officer position
+                    for officer in officers:
+                        if officer["name"] == member_name:
+                            officer["position"] = new_position
+                            break
+            elif old_position in officer_positions and new_position == "Member":
+                officers = self.current_org.get("officers", [])
+                self.current_org["officers"] = [
+                    officer for officer in officers if officer["name"] != member_name
+                ]
+            
             self.save_data()
             self.load_members(search_text)
+            
+            if new_position in officer_positions or old_position in officer_positions:
+                current_index = self.ui.officer_history_dp.currentIndex()
+                selected_semester = self.ui.officer_history_dp.itemText(current_index)
+                officers = (
+                    self.current_org.get("officer_history", {}).get(selected_semester, [])
+                    if selected_semester != "Current Officers"
+                    else self.current_org.get("officers", [])
+                )
+                self.load_officers(officers)
     
     def kick_member(self, row: int) -> None:
         """Remove a member from the organization."""

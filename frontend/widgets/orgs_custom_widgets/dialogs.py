@@ -227,6 +227,7 @@ class EditMemberDialog(QtWidgets.QDialog):
     def __init__(self, member_data: list, parent=None):
         super().__init__(parent)
         self.member_data = member_data
+        self.original_position = member_data[1]
         self.setWindowTitle("Edit Member Position")
         self.setFixedSize(300, 200)
         self.setStyleSheet("""
@@ -256,5 +257,22 @@ class EditMemberDialog(QtWidgets.QDialog):
         main_layout.addLayout(btn_layout)
 
     def confirm(self):
-        self.updated_position = self.position_edit.currentText()
+        new_position = self.position_edit.currentText()
+        
+        if new_position != self.original_position and new_position != "Member":
+            main_window = self.parent()
+            if hasattr(main_window, 'current_org') and main_window.current_org:
+                current_officers = main_window.current_org.get("officers", [])
+                
+                for officer in current_officers:
+                    if officer.get("name") != self.member_data[0] and officer.get("position") == new_position:
+                        QtWidgets.QMessageBox.warning(
+                            self,
+                            "Position Already Taken",
+                            f"The position '{new_position}' is already occupied by {officer.get('name')}.\nPlease choose a different position.",
+                            QtWidgets.QMessageBox.StandardButton.Ok
+                        )
+                        return
+        
+        self.updated_position = new_position
         self.accept()

@@ -6,7 +6,7 @@
             "is_joined": true,
             "is_branch": false,
             "logo_path": "C:\\Users\\Yuri\\Desktop\\v-hub-tester\\frontend\\assets\\organization\\sample_orgs\\CiSCo Logo.jpg",
-            "details": "View Details",
+            "details": "More Details",
             "brief": "Hellow",
             "description": "Represent students and organize academic events.",
             "branches": [
@@ -97,12 +97,19 @@
                     "card_image_path": "C:\\Users\\Yuri\\Desktop\\v-hub-tester\\frontend\\assets\\organization\\sample_officers\\Secretary.jpg",
                     "photo_path": "C:\\Users\\Yuri\\Desktop\\v-hub-tester\\frontend\\assets\\organization\\sample_officers\\Secretary.jpg",
                     "start_date": "07/08/2025"
+                },
+                {
+                    "name": "Yuri Salise",
+                    "position": "President",
+                    "card_image_path": "No Photo",
+                    "photo_path": "No Photo",
+                    "start_date": "10/04/2025"
                 }
             ],
             "members": [
                 [
                     "Yuri Salise",
-                    "Vice - Internal Chairperson",
+                    "President",
                     "Inactive",
                     "2023-04-09"
                 ],
@@ -129,6 +136,30 @@
                     "Member",
                     "Active",
                     "2025-10-04"
+                ],
+                [
+                    "Ruben, Stephen Joseph",
+                    "Vice - Internal Chairperson",
+                    "Active",
+                    "07/08/2025"
+                ],
+                [
+                    "Pescasio, Jacob Hermon",
+                    "Vice - Internal Chairperson",
+                    "Active",
+                    "07/08/2025"
+                ],
+                [
+                    "Okit, Maki Auri",
+                    "Vice - External Chairperson",
+                    "Active",
+                    "07/08/2025"
+                ],
+                [
+                    "Unajan, Vianca Louise",
+                    "Secretary",
+                    "Active",
+                    "07/08/2025"
                 ]
             ],
             "applicants": [],
