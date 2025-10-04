@@ -144,7 +144,7 @@ class Student(User):
 
     def _add_joined_org(self, org_data: Dict) -> None:
         """Add a joined organization card to the grid."""
-        card = JoinedOrgCard(self._get_logo_path(org_data["logo_path"]), org_data["details"], org_data, self)
+        card = JoinedOrgCard(self._get_logo_path(org_data["logo_path"]), org_data, self)
         col = self.joined_org_count % 5
         row = self.joined_org_count // 5
         self.ui.joined_org_grid.addWidget(card, row, col, alignment=QtCore.Qt.AlignmentFlag.AlignTop | QtCore.Qt.AlignmentFlag.AlignHCenter)
@@ -155,7 +155,7 @@ class Student(User):
         """Add a college organization card to the grid."""
         card = CollegeOrgCard(
             self._get_logo_path(org_data["logo_path"]), org_data["description"],
-            org_data["details"], org_data, self
+            org_data, self
         )
         col = self.college_org_count % 5
         row = self.college_org_count // 5
