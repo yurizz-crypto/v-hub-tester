@@ -39,11 +39,14 @@ class Admin(ManagerBase, User):
         self.menu_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.menu_btn.setText("")
         
-        # Use menu.png from assets
         icon = QtGui.QIcon()
-        icon_path = os.path.join(project_root, "frontend", "assets", "organization", "icons", "menu.png")
+        menu_icon_path = os.path.join(
+            os.path.dirname(__file__), 
+            "..", "..", 
+            "assets", "organization", "icons", "menu.png"
+        )
         icon.addPixmap(
-            QtGui.QPixmap(icon_path), 
+            QtGui.QPixmap(menu_icon_path), 
             QtGui.QIcon.Mode.Normal, 
             QtGui.QIcon.State.Off
         )
